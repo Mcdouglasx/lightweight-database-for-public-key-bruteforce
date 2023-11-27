@@ -2,6 +2,10 @@
 creating the lightweight database, 32 million keys.
 
 binary_Db.py
+for single pubkey.
+
+multi_binary_Db.py
+for multiple pubkeys, txt file with one compressed public key per line.
 
 1-we generate a text file with the publickeys represented in 1s and 0s.
 0=even,

@@ -23,9 +23,38 @@ By this I mean that as you increase the collision margin, the probability of fin
 
 
 What's the use of this?
-binary_scan.py
 We just need to randomly generate binary sequences and check if they exist in the database.
 
+for single public key
+
+binary_scan.py
+
+
+for multi-publickeys
+
+multi_binary_scan.py
+
+
+To search for multiple keys, divide the number of keys you choose // the target pubkeys.
+example:
+If you create a database of 100 million keys and have 10 objectives, each objective will represent 10 million keys.
+
+Importantly, change this part to your settings.
+
+#total number of keys in database.
+
+
+Db_items= 100000000
+
+#number of targets.
+
+
+Db_target=10
+
+
+
+
+Donate to:
 btc: bc1qxs47ttydl8tmdv8vtygp7dy76lvayz3r6rdahu
 
 

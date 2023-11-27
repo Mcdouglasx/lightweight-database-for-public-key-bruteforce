@@ -58,7 +58,7 @@ while True:
         with open (r"data-base.bin", "rb") as file:
             s = b
             f = bytes(file.read())
-            inx = (f.find(s) % X)*sustract
+            inx = f.find(s) * sustract
             Pk = (int(pk) + int(inx))+int(inx)*7
         
             data = open("win.txt","a")

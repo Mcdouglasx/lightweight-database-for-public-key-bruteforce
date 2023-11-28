@@ -11,7 +11,7 @@ print("Scanning Binary Sequence")
 #cPub: 030d282cf2ff536d2c42f105d0b8588821a915dc3f9a05bd98bb23af67a2e92a5b
 
 #range
-start= 1
+start= 1000000000
 end=   5000000000
        
 
@@ -52,24 +52,16 @@ while True:
 
     file = open("data-base.bin", "rb")
 
-    dat = bytes(file.read())
+    dat = (file.read())
     
     if b  in dat:
         with open (r"data-base.bin", "rb") as file:
             s = b
-            f = bytes(file.read())
-            inx = f.find(s) * sustract
+            f = (file.read())
+            inx = f.find(s)*sustract
             Pk = (int(pk) + int(inx))+int(inx)*7
         
             data = open("win.txt","a")
             data.write("Pk:"+" "+str(Pk)+"\n")
             data.close()
             break
-        
-        
-
-   
-
-    
-
-    

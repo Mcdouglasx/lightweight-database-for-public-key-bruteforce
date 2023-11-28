@@ -1,16 +1,17 @@
-import secp256k1 as ice
 #@mcdouglasx
+import secp256k1 as ice
+from bitstring import BitArray
 print("Making Binary Data-Base")
 
-target__multi_public_keys = "example.txt"
+target__multi_public_keys = "rand_sustract.txt"
 
 with open(target__multi_public_keys, 'r') as f:
 
     lines= f.readlines()
     X = len(lines)
-    
+    binary = ''
     for line in lines:
-       
+      
         mk= ice.pub2upub(str(line.strip()))
 
         num = 32000000//X # number of keys.
@@ -21,22 +22,25 @@ with open(target__multi_public_keys, 'r') as f:
 
         res= ice.point_loop_subtraction(num, mk, sustract_pub)
 
-        for t in range (num+1):
+        
+        for t in range (num):
+
             h= (res[t*65:t*65+65]).hex()
             hc= int(h[2:], 16)
-            
-            
+                
+                
             if str(hc).endswith(('0','2','4','6','8')):
                 A="0"
-                data = open("Dat-Bint.txt","a")
-                data.write(A)
-                data.close()
-                
+                binary+= ''.join(str(A))
+                    
             if str(hc).endswith(('1','3','5','7','9')):
                 A="1"
-                data = open("Dat-Bint.txt","a")
-                data.write(A)
-                data.close()
+                binary+= ''.join(str(A))
+                
 
-            
+my_str = bytes(BitArray(bin=binary))
+
+binary_file = open('data-base.bin', 'wb')
+binary_file.write(my_str)
+binary_file.close()
 

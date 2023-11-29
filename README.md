@@ -1,8 +1,28 @@
 # lightweight-database-for-public-key-bruteforce-
 creating the lightweight database, 32 million keys.
 
-binary_Db.py
 for single pubkey.
+
+binary_Db.py
+
+single publickey (low memory)
+
+low_memory_db.py
+
+If you want to create a longer database than your memory supports
+For example, 1000 million keys and your memory limit is 100 million, divide by 10 changing this variable:
+
+Low_m= 10
+
+
+for multiple pubkeys
+
+rand_targets_db.py
+
+We create our random subtraction database.
+
+You will obtain 2 .txt files, one with the amount subtracted and its respective publickey and another with the public keys for the binary database.
+
 
 multi_binary_Db.py
 for multiple pubkeys, txt file with one compressed public key per line.

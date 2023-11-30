@@ -1,69 +1,66 @@
-# lightweight database for public-key bruteforce
+# lightweight database for public-key bruteforce puzzle 32
 *creating the lightweight database, 32 million keys 3.80MB.*
+
+**requirements:**
+
+pip install bitstring
+
+secp256k1
+
+https://github.com/iceland2k14/secp256k1
+
+Download and place the files in the same folder as the scripts
+
 
 **for single pubkey.**
 
-binary_Db.py
-
-**single publickey (low memory)**
-
-low_memory_db.py
-
-If you want to create a longer database than your memory supports
-For example, 1000 million keys and your memory limit is 100 million, divide by 10 changing this variable:
-
-`Low_m= 10
+1-we generate a bin file with the publickeys represented in 1s and 0s.
 
 
-**for multiple pubkeys**
+0=even,
+1=odd.
 
-rand_targets_db.py
+using **binary_database.py**
 
-We create our random subtraction database.
-
-You will obtain 2 .txt files, one with the amount subtracted and its respective publickey and another with the public keys for the binary database.
-
-
-multi_binary_Db.py
+**You should use numbers like this:**
 
 
-for multiple pubkeys, txt file with one compressed public key per line.
+Code:
+num = 10000000000000
+Low_m= 10000
+
+Code:
+num = 20000000000000
+Low_m= 2000
+
+**Avoid doing this or you will find private keys with the last numbers changed**
+
+Code:
+num = 14678976447
+Low_m= 23
 
 
-**we have 32 mkeys in a 3.81MB file.**
+**we did it!**
+
+We have a huge database, with little disk space.
 
 Because there is no sequence between even and odd pubkeys we can set a collision margin of 64, 128, 256....
 By this I mean that as you increase the collision margin, the probability of finding an identical binary sequence decreases.
 
 
 **What's the use of this?**
-We just need to randomly generate binary sequences and check if they exist in the database.
 
-**for single public key**
+We just need to randomly generate binary sequences and check if they exist in the
+Database.
 
-binary_scan.py
-
-
-**for multi-publickeys**
-
-multi_binary_scan.py
+**searching single pubkey**
 
 
-To search for multiple keys, divide the number of keys you choose // the target pubkeys.
-example:
-If you create a database of 100 million keys and have 10 objectives, each objective will represent 10 million keys.
-
-Importantly, change this part to your settings.
-
-#total number of keys in database.
+using **Search_key.py**
 
 
-Db_items= 100000000
-
-#number of targets.
-
-
-Db_target=10
+bitcointalk post
+https://bitcointalk.org/index.php?topic=5475626.msg63227343#msg63227343
 
 
 

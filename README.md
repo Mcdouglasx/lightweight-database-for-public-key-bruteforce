@@ -58,6 +58,28 @@ Database.
 
 using **Search_key.py**
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**FOR multiple pubkeys**
+
+
+- first we create the database by making random subtractions in a range specified by us, you can create your own list at your discretion.
+
+
+- Using **rand_targets_db.py**
+
+
+**Db multi-pubkeys**
+
+
+-we create our database for multiple keys.
+
+- Using **multi_binary_Db.py**
+
+
+**scan multi-pubkey**
+
+- Using **multy_binary_scan.py**
 
 bitcointalk post
 https://bitcointalk.org/index.php?topic=5475626.msg63227343#msg63227343
